@@ -6,7 +6,7 @@ export class Star {
     constructor(canvas, pencil){
         this.pencil = pencil;
         this.x = canvas.width * Math.random();
-        this.y = canvas.heigth *Math.random();
+        this.y = canvas.height * Math.random();
     }
 
     draw(pencil){
