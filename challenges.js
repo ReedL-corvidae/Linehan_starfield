@@ -3,7 +3,7 @@ let pencil = canvas.getContext("2d");
 
 import { Star } from "./star.js";
 
-let mySpecialStar = new Star(pencil);
+let mySpecialStar = new Star(canvas, pencil);
 mySpecialStar.draw();
 
 
@@ -12,10 +12,16 @@ let stars = [
 ];
 
 function gameLoop(){
+    //erase canvas
+    pencil.clearRect(0, 0, canvas.width, canvas.height);
     //draw background
     //draw stars
     //move stars
+    for(let i=0; i<stars.length; i++){
+        stars[i].move();
+        stars[i].draw();
+    }
     //recycle stars
 }
 
-setIneterval(gameLoop, 50);
+setInterval(gameLoop, 50);

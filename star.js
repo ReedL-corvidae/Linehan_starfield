@@ -3,16 +3,21 @@ export class Star {
     y = 50;
     pencil;
 
-    constructor(pencil){
+    constructor(canvas, pencil){
         this.pencil = pencil;
+        this.x = canvas.width * Math.random();
+        this.y = canvas.heigth *Math.random();
     }
 
-    draw(){
+    draw(pencil){
 
         this.pencil.beginPath();
-        this.pencil.arc(95, 50, 40, 0, 2*Math.PI)
+        this.pencil.arc(this.x, this.y, 30, 0, 2*Math.PI)
         this.pencil.fillStyle = "red";
         this.pencil.fill();
         this.pencil.closePath();
+    }
+    move(){
+        this.x += 5;
     }
 }
