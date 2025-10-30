@@ -1,0 +1,21 @@
+let canvas = document.getElementById("myCanvas");
+let pencil = canvas.getContext("2d");
+
+import { Star } from "./star.js";
+
+let mySpecialStar = new Star(pencil);
+mySpecialStar.draw();
+
+
+let stars = [
+    mySpecialStar
+];
+
+function gameLoop(){
+    //draw background
+    //draw stars
+    //move stars
+    //recycle stars
+}
+
+setIneterval(gameLoop, 50);
