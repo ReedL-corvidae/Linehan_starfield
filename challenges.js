@@ -4,12 +4,23 @@ let pencil = canvas.getContext("2d");
 import { Star } from "./star.js";
 
 let mySpecialStar = new Star(canvas, pencil);
+let myCoolStar = new Star(canvas, pencil);
+let myEpicStar = new Star(canvas, pencil);
 mySpecialStar.draw();
+myCoolStar.draw();
+myEpicStar.draw();
 
 
 let stars = [
-    mySpecialStar
+    //mySpecialStar,
+    //myCoolStar,
+    //myEpicStar
 ];
+
+for(let i=0; i < 100; i++) {
+    let manyStars = new Star(canvas, pencil);
+    stars.push(manyStars);
+}
 
 function gameLoop(){
     //erase canvas
@@ -18,8 +29,8 @@ function gameLoop(){
     //draw stars
     //move stars
     for(let i=0; i<stars.length; i++){
-        stars[i].move();
         stars[i].draw();
+        stars[i].move(canvas.height);
     }
     //recycle stars
 }
